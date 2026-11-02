@@ -15,10 +15,14 @@ from .arc_agent import (
 from .arc_environment import ARC_MODES, ArcSDKEnvironment, DemoArcEnvironment
 from .arc_reasoner import DemoArcReasoner, OpenAIArcReasoner
 from .frame_encoding import FRAME_FORMATS
+from .providers.anthropic_provider import AnthropicJSONCaller
 from .providers.openai_provider import OpenAIJSONCaller
 from .session import SESSIONS_DIR, always_connected, new_journal, open_journal, tcp_probe, unfinished_runs
 
-RUN_PARAMETERS = ("source", "game", "condition", "seed", "max_steps", "frame_format", "arc_mode")
+RUN_PARAMETERS = ("source", "game", "condition", "seed", "max_steps", "frame_format", "arc_mode", "provider")
+# Defaults for parameters added after older journals were written.
+RESUME_DEFAULTS = {"provider": "openai"}
+PROVIDERS = {"openai": (OpenAIJSONCaller, "api.openai.com"), "anthropic": (AnthropicJSONCaller, "api.anthropic.com")}
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -30,6 +34,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-steps", type=int, default=12)
     parser.add_argument("--frame-format", choices=FRAME_FORMATS, default="runs", help="How the grid is written for the model")
     parser.add_argument("--arc-mode", choices=ARC_MODES, default="online", help="offline plays games from environment_files/")
+    parser.add_argument("--provider", choices=tuple(PROVIDERS), default="openai", help="LLM provider for arc runs")
     parser.add_argument("--output-dir", default="output/arc_runs")
     parser.add_argument("--sessions-dir", default=str(SESSIONS_DIR))
     parser.add_argument("--resume", metavar="RUN_ID", help="Continue an interrupted run ('latest' for the newest)")
@@ -51,10 +56,11 @@ def setup(params: dict):
         )
     recordings = Path("output/arc_recordings")
     mode = params["arc_mode"]
-    hosts = ["api.openai.com"] + (["three.arcprize.org"] if mode == "online" else [])
+    caller_class, api_host = PROVIDERS[params["provider"]]
+    hosts = [api_host] + (["three.arcprize.org"] if mode == "online" else [])
     return (
         lambda: ArcSDKEnvironment(params["game"], params["seed"], recordings, mode=mode),
-        lambda: OpenAIArcReasoner(OpenAIJSONCaller(), frame_format=params["frame_format"]),
+        lambda: OpenAIArcReasoner(caller_class(), frame_format=params["frame_format"]),
         tcp_probe(hosts),
         params["game"],
     )
@@ -81,7 +87,7 @@ def main() -> None:
             sys.exit(f"Run {journal.run_id} has no run_started record and cannot be resumed.")
         if journal.finished:
             sys.exit(f"Run {journal.run_id} already finished.")
-        params = {key: started[key] for key in RUN_PARAMETERS}
+        params = {key: started[key] if key in started else RESUME_DEFAULTS[key] for key in RUN_PARAMETERS}
         print(f"Resuming {journal.run_id} ({params['condition']}, {params['game'] if params['source'] == 'arc' else 'demo'})")
     else:
         params = {key: getattr(args, key) for key in RUN_PARAMETERS}
@@ -94,7 +100,7 @@ def main() -> None:
 
     environment_factory, reasoner_factory, connectivity, game_id = setup(params)
     options = {"journal": journal, "connectivity": connectivity, "max_wait": args.max_wait}
-    extra = {"frame_format": params["frame_format"], "arc_mode": params["arc_mode"]} if params["source"] == "arc" else {}
+    extra = {"frame_format": params["frame_format"], "arc_mode": params["arc_mode"], "provider": params["provider"]} if params["source"] == "arc" else {}
 
     try:
         if params["condition"] == "compare":

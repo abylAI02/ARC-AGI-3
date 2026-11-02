@@ -28,3 +28,30 @@ These are engineering smoke tests on a controlled synthetic environment. They ar
 5. Run enough held-out tasks and seeds to report uncertainty.
 6. Measure circuit depth and transpiled resources in Qiskit; the current statevector engine estimates logical resources only.
 
+
+## Mirror study: Claude Opus 5.5 on the GPT harness (pre-registered 2026-10-31)
+
+**Question.** Is the live ARC-AGI-3 result (no condition clearly better) specific to `gpt-6-luna`, or does it hold for a different frontier model?
+
+**Design.** Re-run the 9 published GPT live comparisons with `claude-opus-5-5` as the only change.
+- Harness: commit `b57e381`, the code that produced the GPT runs (no reflection ledger; one proposal call per turn; no retries; fixed condition order; online only). It lives on branch `mirror/claude-on-gpt-harness`, which adds only `AnthropicJSONCaller`, `--provider`, and a model-name fix in the trace.
+- Model settings: `ANTHROPIC_EFFORT=medium`, `max_tokens=16000`, adaptive thinking (always on), no temperature (not accepted by the model), no server-side model fallback. GPT settings were not recorded.
+- Mode: online (`three.arcprize.org`), like the original runs.
+
+| Game | Seed | Budget | GPT trace |
+|---|---|---|---|
+| ar25 | 0 | 20 | 20261029T152831Z |
+| vc33 | 0 | 30 | 20261029T155621Z |
+| lp85 | 0 | 30 | 20261029T163642Z |
+| r11l | 0 | 20 | 20261029T170909Z |
+| s5i5 | 0 | 20 | 20261029T173922Z |
+| vc33 | 1 | 30 | 20261029T181132Z |
+| ar25 | 1 | 20 | 20261029T182439Z |
+| r11l | 1 | 20 | 20261029T184944Z |
+| s5i5 | 1 | 20 | 20261029T184951Z (GPT failed before the first action in all conditions) |
+
+**Metrics** (from `scripts/mirror_compare.py`). Primary: levels completed per condition. Secondary: actions used, distinct actions, how often the selected action is the top-utility one (GPT LLM-only: 151/216 on these 9 runs), and errors.
+
+**Analysis rules.** Every run is reported, including failures; nothing is re-run except a run that fails before its first action because of an infrastructure error (ARC or API outage), which is re-run once and both attempts are reported. With 9 pairs, results are descriptive only.
+
+**Known confounds.** The model's sampling settings are not comparable (GPT temperature and effort unknown). The online game version may have changed since 10/29. Wall time is not comparable.

@@ -97,6 +97,20 @@ Raw working traces are saved under `output/arc_runs/` and are intentionally igno
 
 Every episode records a `stop_reason` (`success`, `game_over`, `budget_exhausted`, or `error`) so incomplete episodes can be excluded from analysis. Model requests are retried up to three times, including responses that cannot be parsed; environment actions are never retried because they may already have been applied. Comparisons rotate which condition runs first by `seed % 3` and record `condition_order`.
 
+### Using Claude instead of OpenAI
+
+`--provider anthropic` swaps only the reasoner's model; prompts, schemas, scoring, and selectors are unchanged.
+
+```bash
+.venv/bin/pip install -e '.[anthropic]'
+export ANTHROPIC_API_KEY='your-anthropic-key'
+export ANTHROPIC_MODEL='claude-opus-5-5'   # default
+export ANTHROPIC_EFFORT='medium'           # default; recorded in each trace
+.venv/bin/qahs-arc --source arc --provider anthropic --game r11l --condition compare --seed 0 --max-steps 20
+```
+
+Refusals and truncated responses are retried like parse failures. Server-side model fallbacks are intentionally off so that every trace comes from a single model. `python scripts/mirror_compare.py` pairs runs from different models on the same game, seed, and budget, and warns when the paired runs used different harness versions.
+
 ### Offline games (no key, no rate limit)
 
 The downloaded games in `environment_files/` (ls20, ft09, ar25, vc33, lp85, r11l, s5i5) can be played locally with the official engine. This needs no `ARC_API_KEY`, has no rate limit, and cannot drop a connection. Use it for development:

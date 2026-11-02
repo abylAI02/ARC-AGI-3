@@ -406,7 +406,7 @@ def run_arc_comparison(
         source, game_id, seed,
         episodes["llm_only"], episodes["qahs_classical"], episodes["qahs_qaoa"],
         action_budget=max_steps,
-        model=os.environ.get("OPENAI_MODEL") if source == "arc" else "Deterministic local reasoner",
+        model=(settings.get("model") or os.environ.get("OPENAI_MODEL")) if source == "arc" else "Deterministic local reasoner",
         model_settings=settings,
         condition_order=order,
     )

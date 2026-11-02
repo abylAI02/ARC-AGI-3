@@ -29,7 +29,10 @@ def label(path: Path) -> str:
     if not match:
         return path.stem
     date, time, game = match.groups()
-    return f"{game} · {date[4:6]}/{date[6:8]} {time[:2]}:{time[2:4]}"
+    text = f"{game} · {date[4:6]}/{date[6:8]} {time[:2]}:{time[2:4]}"
+    # Model suffix keeps runs from different reasoners distinguishable (e.g. the Claude mirror study).
+    model = json.loads(path.read_text(encoding="utf-8")).get("model")
+    return f"{text} · {model}" if model and game != "demo-hidden-door" else text
 
 
 def export_runs(source: Path = SOURCE, target: Path = TARGET) -> int:

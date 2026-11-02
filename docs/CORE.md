@@ -103,7 +103,7 @@ frontend/public/runs/*.json + index.json   (committed) ──► Next.js on Verc
 - **No condition won any live game.** The best result was 1 completed level, reached once by LLM-only (r11l, 17:09) and once by classical (r11l, 18:49).
 - Turn-level analysis of the saved traces: exact classical selection chose the highest-utility action on **190/190** turns, QAOA on **205/214**, and the LLM on **161/231**. This means the current cost function reduces QAHS to "pick the action with the highest hand-crafted utility." See IMPROVEMENTS A1.
 - One s5i5 run (18:49:51) failed in all three conditions before the first action.
-- The first seven run files come from an older harness that had no classical condition and no reflection ledger. Do not pool them with newer runs.
+- **All** published live runs predate the reflection ledger: they were produced at commit `b57e381`, and none of their turns contain `reflection` or `token_usage`. The first seven files are older still and also have no classical condition. Do not pool any of them with runs from the current harness. The Claude mirror study runs on the same `b57e381` harness for this reason (see `EXPERIMENT_NOTES.md`).
 
 **Bottom line:** the software loop works end to end and is well instrumented. There is not yet any evidence that QAHS or QAOA selection improves reasoning.
 

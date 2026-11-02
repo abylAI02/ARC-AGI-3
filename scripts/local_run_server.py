@@ -33,7 +33,7 @@ class BusyError(PublicError):
     pass
 
 
-def validate(payload: dict) -> tuple[str, str, int, int, str, str]:
+def validate(payload: dict) -> tuple[str, str, int, int, str, str, str]:
     source = str(payload.get("source", "demo"))
     if source not in {"demo", "arc"}:
         raise PublicError("Choose Demo or ARC.")
@@ -55,12 +55,15 @@ def validate(payload: dict) -> tuple[str, str, int, int, str, str]:
     arc_mode = str(payload.get("arc_mode", "online"))
     if arc_mode not in {"online", "offline"}:
         raise PublicError("Choose online or offline ARC mode.")
+    provider = str(payload.get("provider", "openai"))
+    if provider not in {"openai", "anthropic"}:
+        raise PublicError("Choose the OpenAI or Anthropic provider.")
     if source == "arc":
         if arc_mode == "online" and not os.environ.get("ARC_API_KEY"):
             raise PublicError("ARC_API_KEY is not available in this terminal. Use offline mode or set the key.")
-        if not os.environ.get("OPENAI_API_KEY") or not os.environ.get("OPENAI_MODEL"):
+        if provider == "openai" and (not os.environ.get("OPENAI_API_KEY") or not os.environ.get("OPENAI_MODEL")):
             raise PublicError("OpenAI credentials are not available in this terminal.")
-    return source, game, seed, steps, frame_format, arc_mode
+    return source, game, seed, steps, frame_format, arc_mode, provider
 
 
 def unfinished_sessions() -> list[str]:
@@ -75,7 +78,7 @@ def unfinished_sessions() -> list[str]:
 
 
 def run_experiment(payload: dict) -> dict:
-    source, game, seed, steps, frame_format, arc_mode = validate(payload)
+    source, game, seed, steps, frame_format, arc_mode, provider = validate(payload)
     return _locked([
         "--source", source,
         "--game", game,
@@ -84,6 +87,7 @@ def run_experiment(payload: dict) -> dict:
         "--max-steps", str(steps),
         "--frame-format", frame_format,
         "--arc-mode", arc_mode,
+        "--provider", provider,
     ])
 
 

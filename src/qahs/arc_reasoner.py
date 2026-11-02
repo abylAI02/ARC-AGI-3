@@ -151,9 +151,14 @@ class OpenAIArcReasoner:
         usage = {"input_tokens": 0, "output_tokens": 0}
 
         def attempt() -> Any:
-            payload = self.caller.call_json(prompt, schema, name)
-            for key, value in (getattr(self.caller, "last_usage", None) or {}).items():
-                usage[key] = usage.get(key, 0) + int(value)
+            # Count billed tokens even when the call raises after a response (refusal, truncation).
+            if hasattr(self.caller, "last_usage"):
+                self.caller.last_usage = {}
+            try:
+                payload = self.caller.call_json(prompt, schema, name)
+            finally:
+                for key, value in (getattr(self.caller, "last_usage", None) or {}).items():
+                    usage[key] = usage.get(key, 0) + int(value)
             return parse(payload)
 
         result, retries = call_with_retries(attempt, self.attempts, self.retry_delay)
