@@ -1,0 +1,4953 @@
+{
+  "episode": {
+    "seed": 16062428,
+    "initial_world_ids": [
+      "P0",
+      "G0",
+      "M15",
+      "T1",
+      "I0",
+      "S0"
+    ],
+    "final_world_ids": [
+      "P0",
+      "G0",
+      "M15",
+      "T1",
+      "I0",
+      "S0"
+    ],
+    "scale": "S5",
+    "max_steps": 12,
+    "hypothesis_space_size": 16777216,
+    "hypothesis_bits": 24,
+    "perturbation_rate": 0.0
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 0,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "DOWN",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: The player at row 3, col 2 needs to reach the wall opening at row 4, col 4. DOWN is untested in this episode and moves the player toward the opening's row, while also testing one-cell movement against the fixed wall with gap. Prior-episode evidence is fallible and only suggests this route.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.35,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "DOWN",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "DOWN",
+          "plan": [
+            "DOWN",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "explore",
+          "utility": 0.6472800721380576,
+          "expected_information_gain": 0.5471207453005036,
+          "solve_probability": 0.695426067467579,
+          "goal_progress": 0.8636787940485827,
+          "novelty": 1.0,
+          "cost_penalty": 0.5833333333333334,
+          "posterior_entropy_bits": 20.684781463857615,
+          "effective_hypotheses": 1685542.371500066,
+          "family_entropy_bits": {
+            "P": 3.489918455340207,
+            "G": 3.7315603937689312,
+            "M": 3.218771445881315,
+            "T": 3.4139550112740893,
+            "I": 3.438153518562417,
+            "S": 3.3924226390306567
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 17.280986323694812,
+            "params": [
+              1.0718211029008564,
+              1.2002135227027713
+            ],
+            "register_qubo_rmse": {
+              "P": 0.44115022791215414,
+              "G": 0.23791371409107756,
+              "M": 0.3554352972722041,
+              "T": 0.3101883907443803,
+              "I": 0.22404892918789637,
+              "S": 0.3428646832683683
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 3.393862009048462
+        }
+      },
+      "action": "DOWN",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 2,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 7,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 1,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              3,
+              2
+            ],
+            "to": [
+              4,
+              2
+            ]
+          },
+          {
+            "object": "O1",
+            "from": [
+              4,
+              7
+            ],
+            "to": [
+              5,
+              7
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.7311698717948718,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 21.11145437946546,
+        "family_entropy_bits": {
+          "P": 3.5746158377259514,
+          "G": 3.7589652762599672,
+          "M": 3.328235578115633,
+          "T": 3.491622050350335,
+          "I": 3.4872331224664572,
+          "S": 3.4707825145471167
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 2,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 2,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 7,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 1,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "RIGHT",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: Only DOWN has been tested in this episode. RIGHT is untested here and moves the controlled @ toward the visible gap at row 4, column 4 in the barrier column. Prior experience suggests a rightward path along row 4 may lead to a solved state, but that evidence came from a different object (R1) and is only fallible transfer evidence. Testing RIGHT should show whether @ moves one cell per step, passes through the gap, and whether it changes any state.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.3,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "RIGHT",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "explore",
+          "utility": 0.6578764782418921,
+          "expected_information_gain": 0.5382389636875332,
+          "solve_probability": 0.7602111707263404,
+          "goal_progress": 0.8971542148779719,
+          "novelty": 1.0,
+          "cost_penalty": 0.5454545454545454,
+          "posterior_entropy_bits": 20.002359710824877,
+          "effective_hypotheses": 1050292.4824975526,
+          "family_entropy_bits": {
+            "P": 3.394352738653248,
+            "G": 3.5705275680240702,
+            "M": 3.150661434315801,
+            "T": 3.303211243467633,
+            "I": 3.3000981300289167,
+            "S": 3.2835085963352078
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.721908779081144,
+            "params": [
+              1.5660510807707444,
+              1.1302289220954218
+            ],
+            "register_qubo_rmse": {
+              "P": 0.4224836172495073,
+              "G": 0.2750757329393425,
+              "M": 0.3514131782121884,
+              "T": 0.3288683096656884,
+              "I": 0.26390051942654524,
+              "S": 0.35706467146590964
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 2.590217351913452
+        }
+      },
+      "action": "RIGHT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 3,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 2,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              4,
+              2
+            ],
+            "to": [
+              4,
+              3
+            ]
+          },
+          {
+            "object": "O1",
+            "from": [
+              5,
+              7
+            ],
+            "to": [
+              5,
+              8
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.7385016025641026,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 20.476696981405293,
+        "family_entropy_bits": {
+          "P": 3.4833115691353123,
+          "G": 3.676848681382853,
+          "M": 3.2648501201072304,
+          "T": 3.339319318993041,
+          "I": 3.3472742900235413,
+          "S": 3.3650930017633156
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 3,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 3,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 2,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "RIGHT",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: The @ is adjacent to the visible opening at (4,4) in the barrier column. Moving RIGHT tests whether the gap is passable in the current context, which is new because the earlier RIGHT moves were away from the barrier. It also matches the prior R1 path that reached a solved state along row 4, so it is both informative and potentially progressive. UP and LEFT are untested but offer less relevant discrimination right now.",
+        "leading_rules": {
+          "P": [],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [],
+          "S": []
+        },
+        "confidence": 0.4,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "RIGHT",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.6475430925268568,
+          "expected_information_gain": 0.6066585798677516,
+          "solve_probability": 0.7095444314125238,
+          "goal_progress": 0.8724551557170173,
+          "novelty": 1.0,
+          "cost_penalty": 0.5,
+          "posterior_entropy_bits": 19.86386406227826,
+          "effective_hypotheses": 954154.9606570058,
+          "family_entropy_bits": {
+            "P": 3.4833115691353123,
+            "G": 3.458562598458778,
+            "M": 3.071738709902448,
+            "T": 3.137883892994865,
+            "I": 3.3472742900235413,
+            "S": 3.3650930017633156
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 15.97391394179964,
+            "params": [
+              1.9893927433092042,
+              1.1046298567768957
+            ],
+            "register_qubo_rmse": {
+              "P": 0.4474577316753529,
+              "G": 0.30611400270213973,
+              "M": 0.35778892947443475,
+              "T": 0.34933214839949617,
+              "I": 0.30294739603272,
+              "S": 0.3318370308711055
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.6743011474609375
+        }
+      },
+      "action": "RIGHT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 4,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 3,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              4,
+              3
+            ],
+            "to": [
+              4,
+              4
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.8567708333333334,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 20.296716516693767,
+        "family_entropy_bits": {
+          "P": 3.5592256506846818,
+          "G": 3.499329158542862,
+          "M": 3.0978833468113844,
+          "T": 3.266630537869164,
+          "I": 3.4404464340026912,
+          "S": 3.433201388782984
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 4,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 4,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 3,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "RIGHT",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: UP is the only action with zero tests. From the gap cell (4,4), UP targets barrier cell (3,4), so the result should show whether barriers block movement or whether the player is pushed or passes through. Whether O1 co-moves on UP also tests the coupled-movement hypothesis. RIGHT has been tested twice and the prior-experience solve at (4,7) is fallible, so it is less informative now.",
+        "leading_rules": {
+          "P": [],
+          "G": [],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.35,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "UP",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.5127959221561126,
+          "expected_information_gain": 0.5522351021328361,
+          "solve_probability": 0.6969576549155101,
+          "goal_progress": 0.8793560006211824,
+          "novelty": 1.0,
+          "cost_penalty": 0.4444444444444444,
+          "posterior_entropy_bits": 19.753871109911156,
+          "effective_hypotheses": 884112.9146607366,
+          "family_entropy_bits": {
+            "P": 3.5592256506846818,
+            "G": 3.499329158542862,
+            "M": 2.93349617845099,
+            "T": 3.084521986100519,
+            "I": 3.4404464340026912,
+            "S": 3.236851702129412
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 15.653998159715712,
+            "params": [
+              2.339392743309204,
+              1.1046298567768957
+            ],
+            "register_qubo_rmse": {
+              "P": 0.4741786117231722,
+              "G": 0.3231211836457644,
+              "M": 0.41084347145842565,
+              "T": 0.37054905086755163,
+              "I": 0.21270011799652724,
+              "S": 0.3968111715802026
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": false,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.4993195533752441
+        }
+      },
+      "action": "RIGHT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 5,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 4,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              4,
+              4
+            ],
+            "to": [
+              4,
+              5
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.8311698717948718,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 20.06052330648945,
+        "family_entropy_bits": {
+          "P": 3.5838067242230567,
+          "G": 3.550827116888321,
+          "M": 2.934735828978749,
+          "T": 3.225951393948455,
+          "I": 3.456940192711549,
+          "S": 3.30826204973932
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 5,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 5,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 4,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "RIGHT",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: UP is the only available action not yet tested, so it offers the most new evidence about movement and about whether the player responds to it in this region. The player at (4,5) is past the barrier opening, and moving UP to (3,5) is open, so the move is informative and low-risk.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.45,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "UP",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.5958604122032466,
+          "expected_information_gain": 0.5288034093364027,
+          "solve_probability": 0.7501587819772236,
+          "goal_progress": 0.9024478738415997,
+          "novelty": 1.0,
+          "cost_penalty": 0.375,
+          "posterior_entropy_bits": 18.854169412084637,
+          "effective_hypotheses": 473882.3531599721,
+          "family_entropy_bits": {
+            "P": 3.3911453424394877,
+            "G": 3.3269297603210366,
+            "M": 2.772922763940806,
+            "T": 3.0274709179667734,
+            "I": 3.2359902175571142,
+            "S": 3.099710409859421
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 15.868310994613035,
+            "params": [
+              2.295653224754304,
+              1.1036722469474136
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5492379935276136,
+              "G": 0.33328525170554973,
+              "M": 0.4132484646302704,
+              "T": 0.35370449680368876,
+              "I": 0.21951664494168857,
+              "S": 0.42009528717538464
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": false,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.7312102317810059
+        }
+      },
+      "action": "RIGHT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 6,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 5,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              4,
+              5
+            ],
+            "to": [
+              4,
+              6
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.8548076923076923,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 19.115197980748906,
+        "family_entropy_bits": {
+          "P": 3.416407510471336,
+          "G": 3.3638481705633456,
+          "M": 2.8200465867126057,
+          "T": 3.074918013775382,
+          "I": 3.217524515839425,
+          "S": 3.222453183386813
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 6,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 6,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 5,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "RIGHT",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: The player is at (4,6) and has tested RIGHT four times and DOWN once, with no UP test yet. Prior experience reports that a RIGHT step from (4,6) to (4,7) changed solved status, so RIGHT tests whether that transfers to this layout while also continuing the established one-cell horizontal movement. The untested UP remains an alternative for information gain, but RIGHT has the stronger combined value for discrimination and possible completion.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.5,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "RIGHT",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.6306535021407451,
+          "expected_information_gain": 0.4560905446302758,
+          "solve_probability": 0.7421116681366533,
+          "goal_progress": 0.8782701909806904,
+          "novelty": 1.0,
+          "cost_penalty": 0.2857142857142857,
+          "posterior_entropy_bits": 17.92919527520399,
+          "effective_hypotheses": 249589.07755302585,
+          "family_entropy_bits": {
+            "P": 3.2140373100355006,
+            "G": 3.143141522949098,
+            "M": 2.667378336498556,
+            "T": 2.8840086526316004,
+            "I": 3.008400068425354,
+            "S": 3.012229384663881
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.277878185412323,
+            "params": [
+              2.68803720648473,
+              1.0948205451006452
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5822886368145321,
+              "G": 0.3925890242767505,
+              "M": 0.4471617851804718,
+              "T": 0.31732654858908477,
+              "I": 0.29721971999854785,
+              "S": 0.40733464462375785
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.3914127349853516
+        }
+      },
+      "action": "RIGHT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 6,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              4,
+              6
+            ],
+            "to": [
+              4,
+              7
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.8177483974358974,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 18.237877546792422,
+        "family_entropy_bits": {
+          "P": 3.2342124775293373,
+          "G": 3.215596015691842,
+          "M": 2.664581048093383,
+          "T": 3.0100588523027616,
+          "I": 2.973271622735823,
+          "S": 3.1401575304392746
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 7,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 6,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "RIGHT",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: UP is the only untested action and it is adjacent to X1 at (3,7). Observing whether the player moves or pushes X1 discriminates among movement and push hypotheses. RIGHT has been repeated five times without new information, and the earlier solve signal came from prior experience, which is only fallible evidence.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [
+            "G8"
+          ],
+          "M": [
+            "M0",
+            "M3"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.4,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "UP",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.5566938806266091,
+          "expected_information_gain": 0.5338364699229631,
+          "solve_probability": 0.6543658483179764,
+          "goal_progress": 0.8600819554437273,
+          "novelty": 1.0,
+          "cost_penalty": 0.16666666666666666,
+          "posterior_entropy_bits": 17.751318511235755,
+          "effective_hypotheses": 220637.503308701,
+          "family_entropy_bits": {
+            "P": 3.0658835378596296,
+            "G": 3.3045544964077176,
+            "M": 2.758644458708866,
+            "T": 2.846540264713583,
+            "I": 2.8151071771996867,
+            "S": 2.960588576346271
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.976182367941284,
+            "params": [
+              2.6931126532414655,
+              1.0876929690596937
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5966999090456346,
+              "G": 0.42028199873637384,
+              "M": 0.495794386088819,
+              "T": 0.32910816254360586,
+              "I": 0.30849086237013257,
+              "S": 0.42434528831997903
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": false,
+          "candidate_plan_count": 5,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.9460217952728271
+        }
+      },
+      "action": "RIGHT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 8,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 7,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              4,
+              7
+            ],
+            "to": [
+              4,
+              8
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.7878205128205128,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 18.409337107020633,
+        "family_entropy_bits": {
+          "P": 3.1425535140014635,
+          "G": 3.4627395744764695,
+          "M": 2.8262301646515793,
+          "T": 2.975982262705435,
+          "I": 2.90200961327475,
+          "S": 3.0998219779109344
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 8,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 8,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 7,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "UP",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: RIGHT is now blocked by the boundary at column 8, and UP is the only untested direction that tests a new cell. Moving UP from [4,8] to [3,8] should show whether the controlled object moves one cell freely or is constrained by boundary or object effects, which discriminates among movement hypotheses better than repeating RIGHT.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.4,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "UP",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "UP",
+          "plan": [
+            "UP"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.5810766063815522,
+          "expected_information_gain": 0.4297496207450542,
+          "solve_probability": 0.6886903679959008,
+          "goal_progress": 0.8573851996975634,
+          "novelty": 1.0,
+          "cost_penalty": 0.2,
+          "posterior_entropy_bits": 17.62858444473266,
+          "effective_hypotheses": 202643.50984715304,
+          "family_entropy_bits": {
+            "P": 2.9794443683995064,
+            "G": 3.4627395744764695,
+            "M": 2.6930862598883505,
+            "T": 2.816779859995113,
+            "I": 2.7521960483622214,
+            "S": 2.924338333611
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.775809635446265,
+            "params": [
+              2.6462909429623647,
+              1.109339117221223
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5641033621827795,
+              "G": 0.37917903480315934,
+              "M": 0.4747625818852655,
+              "T": 0.34897493427626775,
+              "I": 0.3276250175438158,
+              "S": 0.41191618311892775
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 4,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.9292399883270264
+        }
+      },
+      "action": "UP",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 8,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 4,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 8,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              4,
+              8
+            ],
+            "to": [
+              3,
+              8
+            ]
+          },
+          {
+            "object": "O1",
+            "from": [
+              5,
+              8
+            ],
+            "to": [
+              4,
+              8
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.7166666666666667,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 18.469503526165063,
+        "family_entropy_bits": {
+          "P": 3.1194687747106005,
+          "G": 3.539605946197596,
+          "M": 2.867744767671655,
+          "T": 2.9681461818446073,
+          "I": 2.9132205199929926,
+          "S": 3.0613173357476127
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 9,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 8,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 4,
+            "c": 8,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 8,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "LEFT",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: LEFT is the only untested action and would move @ toward X1 at (3,7), testing whether X1 is pushable (M3/I8) or blocks movement. This discriminates among push, blocking, and no-interaction hypotheses. The barrier at column 4 with an opening at (4,4) suggests a wall-with-gap topology (T0), so the goal may involve passing through that gap.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0",
+            "M3"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.3,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "LEFT",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "LEFT",
+          "plan": [
+            "LEFT"
+          ],
+          "planning_mode": "exploit",
+          "utility": 0.622036636099239,
+          "expected_information_gain": 0.45180193343023173,
+          "solve_probability": 0.6608076921646242,
+          "goal_progress": 0.7985780093700988,
+          "novelty": 1.0,
+          "cost_penalty": 0.25,
+          "posterior_entropy_bits": 17.742038186592815,
+          "effective_hypotheses": 219222.7787744769,
+          "family_entropy_bits": {
+            "P": 2.9711617984936334,
+            "G": 3.3702850718331048,
+            "M": 2.885309891255126,
+            "T": 2.8272084989592616,
+            "I": 2.7784978017701984,
+            "S": 2.9095751242814907
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.851281982111495,
+            "params": [
+              2.6462909429623647,
+              1.109339117221223
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5077745410235819,
+              "G": 0.38481999867332223,
+              "M": 0.4857200200221471,
+              "T": 0.3576546395888965,
+              "I": 0.34256849240635706,
+              "S": 0.4064011212386963
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 4,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.0107767581939697
+        }
+      },
+      "action": "LEFT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 9,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              3,
+              8
+            ],
+            "to": [
+              3,
+              7
+            ]
+          },
+          {
+            "object": "O1",
+            "from": [
+              4,
+              8
+            ],
+            "to": [
+              4,
+              7
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.7108974358974359,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 18.557206007977925,
+        "family_entropy_bits": {
+          "P": 3.106591688819812,
+          "G": 3.456688432016112,
+          "M": 3.0360528714183173,
+          "T": 2.977651455355575,
+          "I": 2.933339868486495,
+          "S": 3.046881691881612
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 10,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 9,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "DOWN",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: Current @1 is at (3,7) with O1 directly below at (4,7). DOWN is tested only once, and the move would push O1 into (5,7) when @1 enters (4,7). This discriminates between pushing, coupled movement, and follow behavior for O1. Earlier O1 moves were inconsistent: it moved with @1 in E1, E2, E8, E9 but not in E3-E7, so the coupling is unresolved. The prior-experience solve on R1 reaching (4,7) did not transfer, since the same cell gave no solve here.",
+        "leading_rules": {
+          "P": [
+            "P15"
+          ],
+          "G": [],
+          "M": [
+            "M3",
+            "M15"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I8"
+          ],
+          "S": [
+            "S8"
+          ]
+        },
+        "confidence": 0.3,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "DOWN",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "DOWN",
+          "plan": [
+            "DOWN"
+          ],
+          "planning_mode": "exploit",
+          "utility": 0.6010665608776418,
+          "expected_information_gain": 0.5878718876358562,
+          "solve_probability": 0.656625703412627,
+          "goal_progress": 0.8286965255762944,
+          "novelty": 1.0,
+          "cost_penalty": 0.3333333333333333,
+          "posterior_entropy_bits": 18.885999569976804,
+          "effective_hypotheses": 484453.80206214084,
+          "family_entropy_bits": {
+            "P": 3.177357752561466,
+            "G": 3.456688432016112,
+            "M": 3.1585538805682543,
+            "T": 2.835187181742679,
+            "I": 3.0837337525085338,
+            "S": 3.174478570579759
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 17.25195030758987,
+            "params": [
+              2.6047011217905744,
+              1.095761588915287
+            ],
+            "register_qubo_rmse": {
+              "P": 0.4316351736489073,
+              "G": 0.35368137534171507,
+              "M": 0.4397388082786117,
+              "T": 0.36512850459225465,
+              "I": 0.2583916541064543,
+              "S": 0.27591659193693047
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 5,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 0.3849904537200928
+        }
+      },
+      "action": "DOWN",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 7,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 10,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              3,
+              7
+            ],
+            "to": [
+              4,
+              7
+            ]
+          },
+          {
+            "object": "O1",
+            "from": [
+              4,
+              7
+            ],
+            "to": [
+              5,
+              7
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.7220753205128205,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 19.555363365722542,
+        "family_entropy_bits": {
+          "P": 3.280145458471979,
+          "G": 3.5475855017192472,
+          "M": 3.2706829165655424,
+          "T": 2.976062034320586,
+          "I": 3.2011057473071425,
+          "S": 3.2797817073380435
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 11,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 5,
+            "c": 7,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 10,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "UP",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: UP has been tested only once, and from the current position it would push X1 at (3,7) upward. That tests whether X1 is pushable (M3) and whether it acts as a collectible or hazard, which the existing evidence does not cover. DOWN and RIGHT are well characterized, and the barrier opening at (4,4) is already known to be passable.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0",
+            "M3"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.3,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "UP",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "UP",
+          "plan": [
+            "UP"
+          ],
+          "planning_mode": "exploit",
+          "utility": 0.6209655762905477,
+          "expected_information_gain": 0.5067945404960192,
+          "solve_probability": 0.6929731137786772,
+          "goal_progress": 0.8473499617872117,
+          "novelty": 1.0,
+          "cost_penalty": 0.5,
+          "posterior_entropy_bits": 18.69960635515217,
+          "effective_hypotheses": 425738.00429218437,
+          "family_entropy_bits": {
+            "P": 3.1332831993010224,
+            "G": 3.367253964373785,
+            "M": 3.1959340782851466,
+            "T": 2.833518271022744,
+            "I": 3.0482649932211356,
+            "S": 3.1213518489483363
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.741108744936632,
+            "params": [
+              2.57177886958748,
+              1.0805857017327045
+            ],
+            "register_qubo_rmse": {
+              "P": 0.40138717267464663,
+              "G": 0.3540620974570971,
+              "M": 0.4471059451720644,
+              "T": 0.37227689616824117,
+              "I": 0.27307103126046506,
+              "S": 0.2900615192157746
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 4,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 0.3377964496612549
+        }
+      },
+      "action": "UP",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 11,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              4,
+              7
+            ],
+            "to": [
+              3,
+              7
+            ]
+          },
+          {
+            "object": "O1",
+            "from": [
+              5,
+              7
+            ],
+            "to": [
+              4,
+              7
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null,
+      "qahs_observation": {
+        "mean_likelihood": 0.7185897435897436,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 19.400130205486096,
+        "family_entropy_bits": {
+          "P": 3.244430083770804,
+          "G": 3.46472873032092,
+          "M": 3.304422178313732,
+          "T": 2.979521524068341,
+          "I": 3.1710416082585864,
+          "S": 3.235986080753714
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    },
+    {
+      "turn": 12,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 11,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "LEFT",
+        "rationale": "QAHS V3.2-S5 arbitration over the same LLM proposal; original rationale: Evidence so far suggests O1 mirrors the player's movement in the same direction (coupled movement, M15), but it was blocked at the right edge. LEFT has been tested only once, and here it tests whether the coupling holds from a new position with O1 directly below the player. That discriminates between coupled-movement hypotheses and position- or edge-dependent ones, and it is more informative than repeating DOWN or RIGHT.",
+        "leading_rules": {
+          "P": [],
+          "G": [],
+          "M": [
+            "M15"
+          ],
+          "T": [],
+          "I": [],
+          "S": []
+        },
+        "confidence": 0.35,
+        "believes_solved": false,
+        "telemetry": {},
+        "llm_selected_action": "LEFT",
+        "qahs": {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "LEFT",
+          "plan": [
+            "LEFT"
+          ],
+          "planning_mode": "exploit",
+          "utility": 0.5038612195013061,
+          "expected_information_gain": 0.5162282942796143,
+          "solve_probability": 0.6717398623926609,
+          "goal_progress": 0.8172389219672079,
+          "novelty": 1.0,
+          "cost_penalty": 1.0,
+          "posterior_entropy_bits": 19.41898470062953,
+          "effective_hypotheses": 700965.8821517918,
+          "family_entropy_bits": {
+            "P": 3.244430083770804,
+            "G": 3.46472873032092,
+            "M": 3.3232766734571655,
+            "T": 2.979521524068341,
+            "I": 3.1710416082585864,
+            "S": 3.235986080753714
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.268337722328695,
+            "params": [
+              2.293152531398807,
+              1.0285445290947712
+            ],
+            "register_qubo_rmse": {
+              "P": 0.36788918937046405,
+              "G": 0.3426889474641327,
+              "M": 0.4066199042126547,
+              "T": 0.3551285442527736,
+              "I": 0.26126659466864116,
+              "S": 0.2759978880503274
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 4,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 0.2620573043823242
+        }
+      },
+      "action": "LEFT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 6,
+            "active": false,
+            "symbol": "@"
+          },
+          {
+            "r": 4,
+            "c": 6,
+            "active": false,
+            "symbol": "O"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "X"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "X"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 12,
+        "solved_env": false,
+        "failed_env": true,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "@1",
+            "from": [
+              3,
+              7
+            ],
+            "to": [
+              3,
+              6
+            ]
+          },
+          {
+            "object": "O1",
+            "from": [
+              4,
+              7
+            ],
+            "to": [
+              4,
+              6
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": true
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": true,
+      "termination_reason": "action_budget_exhausted",
+      "qahs_observation": {
+        "mean_likelihood": 0.6431891025641026,
+        "max_likelihood": 1.0,
+        "posterior_entropy_bits": 19.984639626181128,
+        "family_entropy_bits": {
+          "P": 3.338029549979758,
+          "G": 3.620177512344286,
+          "M": 3.436297188689296,
+          "T": 3.054171281094911,
+          "I": 3.2582800614970466,
+          "S": 3.277684032575831
+        },
+        "map_world_ids": [
+          "P0",
+          "G3",
+          "M0",
+          "T0",
+          "I0",
+          "S0"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "solved": false,
+    "actions": 12,
+    "false_solution_events": 0,
+    "wall_seconds": 76.05324792861938,
+    "termination_reason": "action_budget_exhausted",
+    "llm_calls": 12,
+    "input_tokens": 59479,
+    "output_tokens": 9419,
+    "total_tokens": 68898,
+    "model": "claude-haiku-5-5",
+    "mode": "anthropic",
+    "model_wall_seconds": 56.98091769218445
+  },
+  "change_turn": null,
+  "recovery_latency": null,
+  "agent_summary": {
+    "condition": "qahs",
+    "qahs": {
+      "version": "QAHS-V3.2-S5-production",
+      "implicit_hypothesis_space_size": 16777216,
+      "hypothesis_bits": 24,
+      "rules_per_family": 16,
+      "families": [
+        "P",
+        "G",
+        "M",
+        "T",
+        "I",
+        "S"
+      ],
+      "posterior_entropy_bits": 19.984639626181128,
+      "effective_hypotheses": 1037471.0337228976,
+      "family_entropy_bits": {
+        "P": 3.338029549979758,
+        "G": 3.620177512344286,
+        "M": 3.436297188689296,
+        "T": 3.054171281094911,
+        "I": 3.2582800614970466,
+        "S": 3.277684032575831
+      },
+      "map_world_ids": [
+        "P0",
+        "G3",
+        "M0",
+        "T0",
+        "I0",
+        "S0"
+      ],
+      "evidence_count": 12,
+      "quantum_calls": 12,
+      "quantum_used_calls": 12,
+      "quantum_use_rate": 1.0,
+      "decisions": [
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "DOWN",
+          "plan": [
+            "DOWN",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "explore",
+          "utility": 0.6472800721380576,
+          "expected_information_gain": 0.5471207453005036,
+          "solve_probability": 0.695426067467579,
+          "goal_progress": 0.8636787940485827,
+          "novelty": 1.0,
+          "cost_penalty": 0.5833333333333334,
+          "posterior_entropy_bits": 20.684781463857615,
+          "effective_hypotheses": 1685542.371500066,
+          "family_entropy_bits": {
+            "P": 3.489918455340207,
+            "G": 3.7315603937689312,
+            "M": 3.218771445881315,
+            "T": 3.4139550112740893,
+            "I": 3.438153518562417,
+            "S": 3.3924226390306567
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 17.280986323694812,
+            "params": [
+              1.0718211029008564,
+              1.2002135227027713
+            ],
+            "register_qubo_rmse": {
+              "P": 0.44115022791215414,
+              "G": 0.23791371409107756,
+              "M": 0.3554352972722041,
+              "T": 0.3101883907443803,
+              "I": 0.22404892918789637,
+              "S": 0.3428646832683683
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 3.393862009048462
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "explore",
+          "utility": 0.6578764782418921,
+          "expected_information_gain": 0.5382389636875332,
+          "solve_probability": 0.7602111707263404,
+          "goal_progress": 0.8971542148779719,
+          "novelty": 1.0,
+          "cost_penalty": 0.5454545454545454,
+          "posterior_entropy_bits": 20.002359710824877,
+          "effective_hypotheses": 1050292.4824975526,
+          "family_entropy_bits": {
+            "P": 3.394352738653248,
+            "G": 3.5705275680240702,
+            "M": 3.150661434315801,
+            "T": 3.303211243467633,
+            "I": 3.3000981300289167,
+            "S": 3.2835085963352078
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.721908779081144,
+            "params": [
+              1.5660510807707444,
+              1.1302289220954218
+            ],
+            "register_qubo_rmse": {
+              "P": 0.4224836172495073,
+              "G": 0.2750757329393425,
+              "M": 0.3514131782121884,
+              "T": 0.3288683096656884,
+              "I": 0.26390051942654524,
+              "S": 0.35706467146590964
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 2.590217351913452
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.6475430925268568,
+          "expected_information_gain": 0.6066585798677516,
+          "solve_probability": 0.7095444314125238,
+          "goal_progress": 0.8724551557170173,
+          "novelty": 1.0,
+          "cost_penalty": 0.5,
+          "posterior_entropy_bits": 19.86386406227826,
+          "effective_hypotheses": 954154.9606570058,
+          "family_entropy_bits": {
+            "P": 3.4833115691353123,
+            "G": 3.458562598458778,
+            "M": 3.071738709902448,
+            "T": 3.137883892994865,
+            "I": 3.3472742900235413,
+            "S": 3.3650930017633156
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 15.97391394179964,
+            "params": [
+              1.9893927433092042,
+              1.1046298567768957
+            ],
+            "register_qubo_rmse": {
+              "P": 0.4474577316753529,
+              "G": 0.30611400270213973,
+              "M": 0.35778892947443475,
+              "T": 0.34933214839949617,
+              "I": 0.30294739603272,
+              "S": 0.3318370308711055
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.6743011474609375
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.5127959221561126,
+          "expected_information_gain": 0.5522351021328361,
+          "solve_probability": 0.6969576549155101,
+          "goal_progress": 0.8793560006211824,
+          "novelty": 1.0,
+          "cost_penalty": 0.4444444444444444,
+          "posterior_entropy_bits": 19.753871109911156,
+          "effective_hypotheses": 884112.9146607366,
+          "family_entropy_bits": {
+            "P": 3.5592256506846818,
+            "G": 3.499329158542862,
+            "M": 2.93349617845099,
+            "T": 3.084521986100519,
+            "I": 3.4404464340026912,
+            "S": 3.236851702129412
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 15.653998159715712,
+            "params": [
+              2.339392743309204,
+              1.1046298567768957
+            ],
+            "register_qubo_rmse": {
+              "P": 0.4741786117231722,
+              "G": 0.3231211836457644,
+              "M": 0.41084347145842565,
+              "T": 0.37054905086755163,
+              "I": 0.21270011799652724,
+              "S": 0.3968111715802026
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": false,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.4993195533752441
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.5958604122032466,
+          "expected_information_gain": 0.5288034093364027,
+          "solve_probability": 0.7501587819772236,
+          "goal_progress": 0.9024478738415997,
+          "novelty": 1.0,
+          "cost_penalty": 0.375,
+          "posterior_entropy_bits": 18.854169412084637,
+          "effective_hypotheses": 473882.3531599721,
+          "family_entropy_bits": {
+            "P": 3.3911453424394877,
+            "G": 3.3269297603210366,
+            "M": 2.772922763940806,
+            "T": 3.0274709179667734,
+            "I": 3.2359902175571142,
+            "S": 3.099710409859421
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 15.868310994613035,
+            "params": [
+              2.295653224754304,
+              1.1036722469474136
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5492379935276136,
+              "G": 0.33328525170554973,
+              "M": 0.4132484646302704,
+              "T": 0.35370449680368876,
+              "I": 0.21951664494168857,
+              "S": 0.42009528717538464
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": false,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.7312102317810059
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT",
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.6306535021407451,
+          "expected_information_gain": 0.4560905446302758,
+          "solve_probability": 0.7421116681366533,
+          "goal_progress": 0.8782701909806904,
+          "novelty": 1.0,
+          "cost_penalty": 0.2857142857142857,
+          "posterior_entropy_bits": 17.92919527520399,
+          "effective_hypotheses": 249589.07755302585,
+          "family_entropy_bits": {
+            "P": 3.2140373100355006,
+            "G": 3.143141522949098,
+            "M": 2.667378336498556,
+            "T": 2.8840086526316004,
+            "I": 3.008400068425354,
+            "S": 3.012229384663881
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.277878185412323,
+            "params": [
+              2.68803720648473,
+              1.0948205451006452
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5822886368145321,
+              "G": 0.3925890242767505,
+              "M": 0.4471617851804718,
+              "T": 0.31732654858908477,
+              "I": 0.29721971999854785,
+              "S": 0.40733464462375785
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 7,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.3914127349853516
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "RIGHT",
+          "plan": [
+            "RIGHT"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.5566938806266091,
+          "expected_information_gain": 0.5338364699229631,
+          "solve_probability": 0.6543658483179764,
+          "goal_progress": 0.8600819554437273,
+          "novelty": 1.0,
+          "cost_penalty": 0.16666666666666666,
+          "posterior_entropy_bits": 17.751318511235755,
+          "effective_hypotheses": 220637.503308701,
+          "family_entropy_bits": {
+            "P": 3.0658835378596296,
+            "G": 3.3045544964077176,
+            "M": 2.758644458708866,
+            "T": 2.846540264713583,
+            "I": 2.8151071771996867,
+            "S": 2.960588576346271
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.976182367941284,
+            "params": [
+              2.6931126532414655,
+              1.0876929690596937
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5966999090456346,
+              "G": 0.42028199873637384,
+              "M": 0.495794386088819,
+              "T": 0.32910816254360586,
+              "I": 0.30849086237013257,
+              "S": 0.42434528831997903
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": false,
+          "candidate_plan_count": 5,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.9460217952728271
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "UP",
+          "plan": [
+            "UP"
+          ],
+          "planning_mode": "goal_discrimination",
+          "utility": 0.5810766063815522,
+          "expected_information_gain": 0.4297496207450542,
+          "solve_probability": 0.6886903679959008,
+          "goal_progress": 0.8573851996975634,
+          "novelty": 1.0,
+          "cost_penalty": 0.2,
+          "posterior_entropy_bits": 17.62858444473266,
+          "effective_hypotheses": 202643.50984715304,
+          "family_entropy_bits": {
+            "P": 2.9794443683995064,
+            "G": 3.4627395744764695,
+            "M": 2.6930862598883505,
+            "T": 2.816779859995113,
+            "I": 2.7521960483622214,
+            "S": 2.924338333611
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.775809635446265,
+            "params": [
+              2.6462909429623647,
+              1.109339117221223
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5641033621827795,
+              "G": 0.37917903480315934,
+              "M": 0.4747625818852655,
+              "T": 0.34897493427626775,
+              "I": 0.3276250175438158,
+              "S": 0.41191618311892775
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 4,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.9292399883270264
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "LEFT",
+          "plan": [
+            "LEFT"
+          ],
+          "planning_mode": "exploit",
+          "utility": 0.622036636099239,
+          "expected_information_gain": 0.45180193343023173,
+          "solve_probability": 0.6608076921646242,
+          "goal_progress": 0.7985780093700988,
+          "novelty": 1.0,
+          "cost_penalty": 0.25,
+          "posterior_entropy_bits": 17.742038186592815,
+          "effective_hypotheses": 219222.7787744769,
+          "family_entropy_bits": {
+            "P": 2.9711617984936334,
+            "G": 3.3702850718331048,
+            "M": 2.885309891255126,
+            "T": 2.8272084989592616,
+            "I": 2.7784978017701984,
+            "S": 2.9095751242814907
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.851281982111495,
+            "params": [
+              2.6462909429623647,
+              1.109339117221223
+            ],
+            "register_qubo_rmse": {
+              "P": 0.5077745410235819,
+              "G": 0.38481999867332223,
+              "M": 0.4857200200221471,
+              "T": 0.3576546395888965,
+              "I": 0.34256849240635706,
+              "S": 0.4064011212386963
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 4,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 1.0107767581939697
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "DOWN",
+          "plan": [
+            "DOWN"
+          ],
+          "planning_mode": "exploit",
+          "utility": 0.6010665608776418,
+          "expected_information_gain": 0.5878718876358562,
+          "solve_probability": 0.656625703412627,
+          "goal_progress": 0.8286965255762944,
+          "novelty": 1.0,
+          "cost_penalty": 0.3333333333333333,
+          "posterior_entropy_bits": 18.885999569976804,
+          "effective_hypotheses": 484453.80206214084,
+          "family_entropy_bits": {
+            "P": 3.177357752561466,
+            "G": 3.456688432016112,
+            "M": 3.1585538805682543,
+            "T": 2.835187181742679,
+            "I": 3.0837337525085338,
+            "S": 3.174478570579759
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 17.25195030758987,
+            "params": [
+              2.6047011217905744,
+              1.095761588915287
+            ],
+            "register_qubo_rmse": {
+              "P": 0.4316351736489073,
+              "G": 0.35368137534171507,
+              "M": 0.4397388082786117,
+              "T": 0.36512850459225465,
+              "I": 0.2583916541064543,
+              "S": 0.27591659193693047
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 5,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 0.3849904537200928
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "UP",
+          "plan": [
+            "UP"
+          ],
+          "planning_mode": "exploit",
+          "utility": 0.6209655762905477,
+          "expected_information_gain": 0.5067945404960192,
+          "solve_probability": 0.6929731137786772,
+          "goal_progress": 0.8473499617872117,
+          "novelty": 1.0,
+          "cost_penalty": 0.5,
+          "posterior_entropy_bits": 18.69960635515217,
+          "effective_hypotheses": 425738.00429218437,
+          "family_entropy_bits": {
+            "P": 3.1332831993010224,
+            "G": 3.367253964373785,
+            "M": 3.1959340782851466,
+            "T": 2.833518271022744,
+            "I": 3.0482649932211356,
+            "S": 3.1213518489483363
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.741108744936632,
+            "params": [
+              2.57177886958748,
+              1.0805857017327045
+            ],
+            "register_qubo_rmse": {
+              "P": 0.40138717267464663,
+              "G": 0.3540620974570971,
+              "M": 0.4471059451720644,
+              "T": 0.37227689616824117,
+              "I": 0.27307103126046506,
+              "S": 0.2900615192157746
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 4,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 0.3377964496612549
+        },
+        {
+          "version": "QAHS-V3.2-S5-production",
+          "selected_action": "LEFT",
+          "plan": [
+            "LEFT"
+          ],
+          "planning_mode": "exploit",
+          "utility": 0.5038612195013061,
+          "expected_information_gain": 0.5162282942796143,
+          "solve_probability": 0.6717398623926609,
+          "goal_progress": 0.8172389219672079,
+          "novelty": 1.0,
+          "cost_penalty": 1.0,
+          "posterior_entropy_bits": 19.41898470062953,
+          "effective_hypotheses": 700965.8821517918,
+          "family_entropy_bits": {
+            "P": 3.244430083770804,
+            "G": 3.46472873032092,
+            "M": 3.3232766734571655,
+            "T": 2.979521524068341,
+            "I": 3.1710416082585864,
+            "S": 3.235986080753714
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ],
+          "quantum": {
+            "backend": "qiskit_aer_qaoa_register24",
+            "used_quantum": true,
+            "qubits": 24,
+            "encoding": "six 4-bit registers: P,G,M,T,I,S; register bits are LSB-first",
+            "implicit_basis_states": 16777216,
+            "reps": 1,
+            "shots": 256,
+            "objective_shots": 128,
+            "optimizer": "COBYLA",
+            "optimizer_maxiter": 12,
+            "optimizer_success": false,
+            "objective": 16.268337722328695,
+            "params": [
+              2.293152531398807,
+              1.0285445290947712
+            ],
+            "register_qubo_rmse": {
+              "P": 0.36788918937046405,
+              "G": 0.3426889474641327,
+              "M": 0.4066199042126547,
+              "T": 0.3551285442527736,
+              "I": 0.26126659466864116,
+              "S": 0.2759978880503274
+            },
+            "unique_quantum_worlds": 128
+          },
+          "llm_agreement": true,
+          "candidate_plan_count": 4,
+          "candidate_particle_count": 384,
+          "evaluated_particles": 64,
+          "information_firewall": {
+            "active_hidden_world_used": false,
+            "true_symbol_mapping_used": false,
+            "candidate_bindings_marginalized": true
+          },
+          "wall_seconds": 0.2620573043823242
+        }
+      ],
+      "observations": [
+        {
+          "mean_likelihood": 0.7311698717948718,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 21.11145437946546,
+          "family_entropy_bits": {
+            "P": 3.5746158377259514,
+            "G": 3.7589652762599672,
+            "M": 3.328235578115633,
+            "T": 3.491622050350335,
+            "I": 3.4872331224664572,
+            "S": 3.4707825145471167
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.7385016025641026,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 20.476696981405293,
+          "family_entropy_bits": {
+            "P": 3.4833115691353123,
+            "G": 3.676848681382853,
+            "M": 3.2648501201072304,
+            "T": 3.339319318993041,
+            "I": 3.3472742900235413,
+            "S": 3.3650930017633156
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.8567708333333334,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 20.296716516693767,
+          "family_entropy_bits": {
+            "P": 3.5592256506846818,
+            "G": 3.499329158542862,
+            "M": 3.0978833468113844,
+            "T": 3.266630537869164,
+            "I": 3.4404464340026912,
+            "S": 3.433201388782984
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.8311698717948718,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 20.06052330648945,
+          "family_entropy_bits": {
+            "P": 3.5838067242230567,
+            "G": 3.550827116888321,
+            "M": 2.934735828978749,
+            "T": 3.225951393948455,
+            "I": 3.456940192711549,
+            "S": 3.30826204973932
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.8548076923076923,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 19.115197980748906,
+          "family_entropy_bits": {
+            "P": 3.416407510471336,
+            "G": 3.3638481705633456,
+            "M": 2.8200465867126057,
+            "T": 3.074918013775382,
+            "I": 3.217524515839425,
+            "S": 3.222453183386813
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.8177483974358974,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 18.237877546792422,
+          "family_entropy_bits": {
+            "P": 3.2342124775293373,
+            "G": 3.215596015691842,
+            "M": 2.664581048093383,
+            "T": 3.0100588523027616,
+            "I": 2.973271622735823,
+            "S": 3.1401575304392746
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.7878205128205128,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 18.409337107020633,
+          "family_entropy_bits": {
+            "P": 3.1425535140014635,
+            "G": 3.4627395744764695,
+            "M": 2.8262301646515793,
+            "T": 2.975982262705435,
+            "I": 2.90200961327475,
+            "S": 3.0998219779109344
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.7166666666666667,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 18.469503526165063,
+          "family_entropy_bits": {
+            "P": 3.1194687747106005,
+            "G": 3.539605946197596,
+            "M": 2.867744767671655,
+            "T": 2.9681461818446073,
+            "I": 2.9132205199929926,
+            "S": 3.0613173357476127
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.7108974358974359,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 18.557206007977925,
+          "family_entropy_bits": {
+            "P": 3.106591688819812,
+            "G": 3.456688432016112,
+            "M": 3.0360528714183173,
+            "T": 2.977651455355575,
+            "I": 2.933339868486495,
+            "S": 3.046881691881612
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.7220753205128205,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 19.555363365722542,
+          "family_entropy_bits": {
+            "P": 3.280145458471979,
+            "G": 3.5475855017192472,
+            "M": 3.2706829165655424,
+            "T": 2.976062034320586,
+            "I": 3.2011057473071425,
+            "S": 3.2797817073380435
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.7185897435897436,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 19.400130205486096,
+          "family_entropy_bits": {
+            "P": 3.244430083770804,
+            "G": 3.46472873032092,
+            "M": 3.304422178313732,
+            "T": 2.979521524068341,
+            "I": 3.1710416082585864,
+            "S": 3.235986080753714
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        },
+        {
+          "mean_likelihood": 0.6431891025641026,
+          "max_likelihood": 1.0,
+          "posterior_entropy_bits": 19.984639626181128,
+          "family_entropy_bits": {
+            "P": 3.338029549979758,
+            "G": 3.620177512344286,
+            "M": 3.436297188689296,
+            "T": 3.054171281094911,
+            "I": 3.2582800614970466,
+            "S": 3.277684032575831
+          },
+          "map_world_ids": [
+            "P0",
+            "G3",
+            "M0",
+            "T0",
+            "I0",
+            "S0"
+          ]
+        }
+      ],
+      "information_firewall": {
+        "active_hidden_world_used": false,
+        "true_symbol_mapping_used": false,
+        "candidate_bindings_marginalized": true
+      },
+      "posterior": {
+        "P": {
+          "0": 0.35343522179859677,
+          "1": 0.029912856337694204,
+          "2": 0.02979389613458351,
+          "3": 0.04829773993338489,
+          "4": 0.029314173187835843,
+          "5": 0.04790983425058481,
+          "6": 0.036415235164365074,
+          "7": 0.02943554143361794,
+          "8": 0.03006344578934614,
+          "9": 0.02956837826840694,
+          "10": 0.04028074347330769,
+          "11": 0.041400484445249915,
+          "12": 0.03933919933377404,
+          "13": 0.03651838342131502,
+          "14": 0.03651128367815584,
+          "15": 0.14180358334978133
+        },
+        "G": {
+          "0": 0.04964093267759414,
+          "1": 0.03632601873286963,
+          "2": 0.045924744746448275,
+          "3": 0.28285962387626684,
+          "4": 0.042644377993693604,
+          "5": 0.041709245045913466,
+          "6": 0.042779749522924175,
+          "7": 0.03038560203282447,
+          "8": 0.09044206345761435,
+          "9": 0.027974531727196328,
+          "10": 0.052361685274995545,
+          "11": 0.04955866221659563,
+          "12": 0.061370044543301146,
+          "13": 0.046741249120118414,
+          "14": 0.046348294343690324,
+          "15": 0.05293317468795372
+        },
+        "M": {
+          "0": 0.25714108713248973,
+          "1": 0.03464852556117055,
+          "2": 0.0280999534624225,
+          "3": 0.15421976611323276,
+          "4": 0.03177037536757993,
+          "5": 0.03191743247711243,
+          "6": 0.03007891599797459,
+          "7": 0.02846652255252468,
+          "8": 0.03678364610003789,
+          "9": 0.0353945982175075,
+          "10": 0.03485657197988397,
+          "11": 0.03833334067809578,
+          "12": 0.0283083475191438,
+          "13": 0.03479925128334521,
+          "14": 0.02944532134296388,
+          "15": 0.16573634421451477
+        },
+        "T": {
+          "0": 0.47327551840610893,
+          "1": 0.035095962126465874,
+          "2": 0.0329405676106312,
+          "3": 0.03850915738757709,
+          "4": 0.036806069012342804,
+          "5": 0.03648600977522202,
+          "6": 0.034586882654482155,
+          "7": 0.033424509028217746,
+          "8": 0.03747072337577859,
+          "9": 0.03286917130785173,
+          "10": 0.031209728618257607,
+          "11": 0.033225964227731455,
+          "12": 0.0381361225540737,
+          "13": 0.03232085526871914,
+          "14": 0.03794410531538838,
+          "15": 0.03569865333115163
+        },
+        "I": {
+          "0": 0.400305170823765,
+          "1": 0.03695045845808982,
+          "2": 0.03594888635775235,
+          "3": 0.03544032301565515,
+          "4": 0.03306895766426082,
+          "5": 0.03824365931570892,
+          "6": 0.03320562736328288,
+          "7": 0.03507329862445511,
+          "8": 0.10238073340740478,
+          "9": 0.03418995440176554,
+          "10": 0.03235097635810018,
+          "11": 0.03289464702928147,
+          "12": 0.03832888299150782,
+          "13": 0.03989564622019494,
+          "14": 0.032899480449876846,
+          "15": 0.038823297518898355
+        },
+        "S": {
+          "0": 0.39195017295538387,
+          "1": 0.03262383226217669,
+          "2": 0.03362839677789336,
+          "3": 0.0334395695128607,
+          "4": 0.03461067610415662,
+          "5": 0.03515534904827495,
+          "6": 0.03443625005317474,
+          "7": 0.03632315850267788,
+          "8": 0.10886106698434961,
+          "9": 0.036341484539763005,
+          "10": 0.038032647926362545,
+          "11": 0.033651061058678364,
+          "12": 0.04000933710038717,
+          "13": 0.037620056165257945,
+          "14": 0.035545918368181245,
+          "15": 0.03777102264042129
+        }
+      }
+    },
+    "transfer_state": {
+      "posterior": {
+        "P": {
+          "0": 0.35343522179859677,
+          "1": 0.029912856337694204,
+          "2": 0.02979389613458351,
+          "3": 0.04829773993338489,
+          "4": 0.029314173187835843,
+          "5": 0.04790983425058481,
+          "6": 0.036415235164365074,
+          "7": 0.02943554143361794,
+          "8": 0.03006344578934614,
+          "9": 0.02956837826840694,
+          "10": 0.04028074347330769,
+          "11": 0.041400484445249915,
+          "12": 0.03933919933377404,
+          "13": 0.03651838342131502,
+          "14": 0.03651128367815584,
+          "15": 0.14180358334978133
+        },
+        "G": {
+          "0": 0.04964093267759414,
+          "1": 0.03632601873286963,
+          "2": 0.045924744746448275,
+          "3": 0.28285962387626684,
+          "4": 0.042644377993693604,
+          "5": 0.041709245045913466,
+          "6": 0.042779749522924175,
+          "7": 0.03038560203282447,
+          "8": 0.09044206345761435,
+          "9": 0.027974531727196328,
+          "10": 0.052361685274995545,
+          "11": 0.04955866221659563,
+          "12": 0.061370044543301146,
+          "13": 0.046741249120118414,
+          "14": 0.046348294343690324,
+          "15": 0.05293317468795372
+        },
+        "M": {
+          "0": 0.25714108713248973,
+          "1": 0.03464852556117055,
+          "2": 0.0280999534624225,
+          "3": 0.15421976611323276,
+          "4": 0.03177037536757993,
+          "5": 0.03191743247711243,
+          "6": 0.03007891599797459,
+          "7": 0.02846652255252468,
+          "8": 0.03678364610003789,
+          "9": 0.0353945982175075,
+          "10": 0.03485657197988397,
+          "11": 0.03833334067809578,
+          "12": 0.0283083475191438,
+          "13": 0.03479925128334521,
+          "14": 0.02944532134296388,
+          "15": 0.16573634421451477
+        },
+        "T": {
+          "0": 0.47327551840610893,
+          "1": 0.035095962126465874,
+          "2": 0.0329405676106312,
+          "3": 0.03850915738757709,
+          "4": 0.036806069012342804,
+          "5": 0.03648600977522202,
+          "6": 0.034586882654482155,
+          "7": 0.033424509028217746,
+          "8": 0.03747072337577859,
+          "9": 0.03286917130785173,
+          "10": 0.031209728618257607,
+          "11": 0.033225964227731455,
+          "12": 0.0381361225540737,
+          "13": 0.03232085526871914,
+          "14": 0.03794410531538838,
+          "15": 0.03569865333115163
+        },
+        "I": {
+          "0": 0.400305170823765,
+          "1": 0.03695045845808982,
+          "2": 0.03594888635775235,
+          "3": 0.03544032301565515,
+          "4": 0.03306895766426082,
+          "5": 0.03824365931570892,
+          "6": 0.03320562736328288,
+          "7": 0.03507329862445511,
+          "8": 0.10238073340740478,
+          "9": 0.03418995440176554,
+          "10": 0.03235097635810018,
+          "11": 0.03289464702928147,
+          "12": 0.03832888299150782,
+          "13": 0.03989564622019494,
+          "14": 0.032899480449876846,
+          "15": 0.038823297518898355
+        },
+        "S": {
+          "0": 0.39195017295538387,
+          "1": 0.03262383226217669,
+          "2": 0.03362839677789336,
+          "3": 0.0334395695128607,
+          "4": 0.03461067610415662,
+          "5": 0.03515534904827495,
+          "6": 0.03443625005317474,
+          "7": 0.03632315850267788,
+          "8": 0.10886106698434961,
+          "9": 0.036341484539763005,
+          "10": 0.038032647926362545,
+          "11": 0.033651061058678364,
+          "12": 0.04000933710038717,
+          "13": 0.037620056165257945,
+          "14": 0.035545918368181245,
+          "15": 0.03777102264042129
+        }
+      },
+      "evidence_count": 12
+    }
+  },
+  "measurements": {
+    "actions": 12,
+    "unique_actions": 4,
+    "action_counts": {
+      "UP": 2,
+      "DOWN": 2,
+      "LEFT": 2,
+      "RIGHT": 6
+    },
+    "action_diversity_fraction": 1.0,
+    "action_entropy_bits": 1.792481250360578,
+    "normalized_action_entropy": 0.896240625180289,
+    "redundant_state_action_count": 0,
+    "redundant_action_rate": 0.0,
+    "novel_state_action_count": 12,
+    "novel_experiment_rate": 1.0,
+    "no_change_action_count": 0,
+    "no_change_action_rate": 0.0,
+    "repeated_same_action_after_no_change": 0,
+    "no_change_action_persistence": 0.0,
+    "mean_confidence": 0.3666666666666667,
+    "mean_confidence_effective_action": 0.3666666666666667,
+    "mean_confidence_no_change_action": null,
+    "decision_latency_seconds_per_action": 4.748409807682037,
+    "tokens_per_action": 5741.5,
+    "solved": false,
+    "termination_reason": "action_budget_exhausted"
+  },
+  "autonomy_score": 1.0
+}

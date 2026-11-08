@@ -62,3 +62,17 @@ a failed call, since overwritten); the complete results are in the later commits
 - LLM-only: 18 episodes, 26 min, about 1.04M tokens. SAI 0.718.
 - QAHS: 18 episodes, 33 min, about 0.95M tokens. SAI 0.459.
 - Calculations: `METRIC_CALCULATIONS.md`. Summary for the team: `HANDOFF.md`.
+
+## Claude Haiku 5.5 run (2026-11-08)
+
+Same code, adapter and flags as the Opus run, with `--model claude-haiku-5-5` and output in
+`claude_haiku_5_5/`. Both conditions completed in one pass with no failed calls. Same manifest
+and metric-spec hashes as the Qwen and Opus reports.
+
+| Haiku 5.5 | G | A | Au | T | R | SAI |
+|---|---|---|---|---|---|---|
+| LLM-only | 0.200 | 1.000 | 0.966 | 0.667 | 0.000 | 0.566 |
+| QAHS | 0.200 | 1.000 | 0.707 | 0.389 | 0.000 | 0.459 |
+
+No paired difference is significant (lowest p = 0.625, Au). LLM-only: 213 calls, 0.95M input /
+0.15M output tokens, $0.17. QAHS: 199 calls, 0.86M / 0.11M, $0.14.

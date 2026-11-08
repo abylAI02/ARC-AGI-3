@@ -1,0 +1,2334 @@
+{
+  "episode": {
+    "seed": 16062130,
+    "initial_world_ids": [
+      "P14",
+      "G15",
+      "M14",
+      "T9",
+      "I5",
+      "S3"
+    ],
+    "final_world_ids": [
+      "P14",
+      "G15",
+      "M14",
+      "T9",
+      "I5",
+      "S3"
+    ],
+    "scale": "S5",
+    "max_steps": 12,
+    "hypothesis_space_size": 16777216,
+    "hypothesis_bits": 24,
+    "perturbation_rate": 0.0
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 0,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "LEFT",
+        "rationale": "No experimental evidence yet, and all four actions are untested. The grid has a barrier column at col 4 with a single visible opening at row 4, and the agent-visible objects include R1 at (3,2), which is the nearest object to the left side, and K objects. Choosing LEFT provides a first test of movement direction for an untested action while staying in the left region where R1 and K2 are; it discriminates whether the controllable entity is R1 (near the left) versus others, since moving left from the current configuration would be informative about wall/boundary and object-push behavior. All actions are equally uncharacterized, so LEFT is selected as an arbitrary untested probe with low prior commitment.",
+        "leading_rules": {
+          "P": [],
+          "G": [],
+          "M": [],
+          "T": [],
+          "I": [],
+          "S": []
+        },
+        "confidence": 0.2,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "LEFT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 1,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 2,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 1,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "RIGHT",
+        "rationale": "LEFT produced no observable change, so it is uninformative about movement for the player-like object. RIGHT is untested and, from R1 at row 3 col 2, moves toward the barrier column and the visible opening at row 4 col 4; it can discriminate whether R1 is controllable (movement or blocked-by-barrier outcomes) versus a static object. Testing an untested direction gives new evidence without repeating the characterized action.",
+        "leading_rules": {
+          "P": [],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.3,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "RIGHT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 2,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 3,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 2,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "UP",
+        "rationale": "LEFT and RIGHT produced no observable change, so horizontal movement has no visible effect on the player or objects so far (or the player is not controlled by those actions in this state). UP and DOWN are untested, so choosing UP provides new evidence about whether vertical movement is controllable and whether the player responds to any direction. Vertical movement is also the natural way to explore toward the barrier opening at row 4 column 4 and the objects in column 7. The current evidence is consistent with a stateless no-effect hypothesis for LEFT/RIGHT, a state-dependent control hypothesis, or a player identity that is not yet discovered, so testing UP is the highest-value next step.",
+        "leading_rules": {
+          "P": [],
+          "G": [],
+          "M": [],
+          "T": [],
+          "I": [],
+          "S": []
+        },
+        "confidence": 0.2,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "UP",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 3,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "R1",
+            "from": [
+              3,
+              2
+            ],
+            "to": [
+              4,
+              2
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 4,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 3,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "DOWN",
+        "rationale": "DOWN is the only action not yet tested, so it adds new evidence. LEFT and RIGHT produced no change. UP moved R1 from row 3 to row 4, which is the opposite of the expected UP direction. DOWN can test whether vertical direction is reversed (M9) or whether R1 is responding to a different controlled mechanism.",
+        "leading_rules": {
+          "P": [
+            "P5"
+          ],
+          "G": [],
+          "M": [
+            "M9"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.3,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "DOWN",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 4,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "R1",
+            "from": [
+              4,
+              2
+            ],
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 5,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 4,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "UP",
+        "rationale": "UP and DOWN each moved R1 by one cell vertically, while LEFT and RIGHT produced no change even though the target cells appeared open. This suggests action-dependent or axis-restricted control of R1. Repeating UP from the new position (4,2) tests whether vertical control is consistent and whether movement is strictly one cell, which discriminates among the remaining hypotheses better than repeating LEFT or RIGHT.",
+        "leading_rules": {
+          "P": [
+            "P13",
+            "P5"
+          ],
+          "G": [],
+          "M": [
+            "M0"
+          ],
+          "T": [],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.35,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "UP",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 5,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "R1",
+            "from": [
+              3,
+              2
+            ],
+            "to": [
+              4,
+              2
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 6,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 5,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "RIGHT",
+        "rationale": "R1 has responded only to UP and DOWN so far, and LEFT and RIGHT produced no change at its earlier position. Its position has changed to (4,2), so repeating RIGHT there tests whether horizontal control is state- or position-dependent rather than absent, and it moves R1 toward the barrier opening at (4,4).",
+        "leading_rules": {
+          "P": [
+            "P5"
+          ],
+          "G": [],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S8"
+          ]
+        },
+        "confidence": 0.35,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "RIGHT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 1,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 6,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "R1",
+            "from": [
+              4,
+              2
+            ],
+            "to": [
+              4,
+              1
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 7,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 1,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 6,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "RIGHT",
+        "rationale": "R1 is at the left edge (row 4, col 1) and RIGHT was previously observed to move it, while LEFT and the RIGHT at the start produced no change. Pressing RIGHT from this edge position tests whether R1 slides along row 4 toward the barrier opening at (4,4) and the V object, which discriminates between one-cell and slide movement hypotheses. The evidence about coordinate ordering is inconsistent, so this is a low-confidence probe.",
+        "leading_rules": {
+          "P": [
+            "P5"
+          ],
+          "G": [],
+          "M": [
+            "M0",
+            "M2"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.3,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "RIGHT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 1,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 7,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 8,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 4,
+            "c": 1,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 7,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "DOWN",
+        "rationale": "R1 is the only object that has moved. From its current position (4,1), DOWN is untested in this context and would show whether the observed direction mapping is consistent with a one-cell move or a state/position-dependent or reversed response. LEFT and RIGHT were already tested from the edge and show no fresh information, and UP has been tested twice.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [],
+          "M": [
+            "M0",
+            "M9"
+          ],
+          "T": [],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0",
+            "S8"
+          ]
+        },
+        "confidence": 0.35,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "DOWN",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 1,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 8,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "R1",
+            "from": [
+              4,
+              1
+            ],
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 9,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 1,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 8,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "LEFT",
+        "rationale": "LEFT is the least-tested action (1 trial, and that trial may have occurred at an edge). The observed moves so far are consistent with R1 being the only mover, with UP and DOWN changing the row-like coordinate and RIGHT changing the column-like coordinate. RIGHT at column 1 produced no movement, which may be an edge block. LEFT should test whether the opposite-direction move is available from R1's current position at (3,1), and whether R1 can approach the barrier column or the opening at (4,4). Other objects (V1, K1, K2) have not yet been probed, so the rule space is still broad.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.2,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "LEFT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 9,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "R1",
+            "from": [
+              3,
+              1
+            ],
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 10,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 2,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 9,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "LEFT",
+        "rationale": "Evidence suggests reversed directional response: UP moved R1 down (row+1), DOWN moved it up, RIGHT moved it left (col-1), LEFT moved it right. This fits M9 (reverse requested direction). However, the initial LEFT at (3,2) and RIGHT produced no movement, which is inconsistent with a pure reversal and may indicate state, history, or boundary effects. LEFT from (3,2) should move R1 to (3,3) under reversal; no movement would point to a state- or history-dependent rule (S8/P11). This is the most discriminating untested-in-context test.",
+        "leading_rules": {
+          "P": [
+            "P11"
+          ],
+          "G": [],
+          "M": [
+            "M9"
+          ],
+          "T": [],
+          "I": [],
+          "S": [
+            "S8"
+          ]
+        },
+        "confidence": 0.4,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "LEFT",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 3,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 10,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "R1",
+            "from": [
+              3,
+              2
+            ],
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 11,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 3,
+            "c": 3,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 10,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "DOWN",
+        "rationale": "R1 is the only object that has moved, and its single-cell moves in all four directions have been observed. It sits at (3,3) beside the barrier at column 4, and the only visible opening is at (4,4). DOWN moves R1 toward row 4, which is the opening row, and tests whether the response to DOWN depends on the current position, since its earlier DOWN moves were from different cells. Repeating an action is justified here because the state has changed.",
+        "leading_rules": {
+          "P": [
+            "P0"
+          ],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.4,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "DOWN",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 2,
+            "c": 3,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 11,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "R1",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              2,
+              3
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": false
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": false,
+      "termination_reason": null
+    },
+    {
+      "turn": 12,
+      "state_before": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 2,
+            "c": 3,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 11,
+        "solved_env": false,
+        "failed_env": false,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "agent": {
+        "selected_action": "DOWN",
+        "rationale": "All four actions have been tested, and only R1 has moved so far. R1 sits at row 2, col 3, and the barrier opening is at row 4, col 4. Moving DOWN tests whether R1 can reach the gap line and whether the barrier is passable. Coordinate direction is still ambiguous from the evidence, so confidence is low.",
+        "leading_rules": {
+          "P": [
+            "P5"
+          ],
+          "G": [
+            "G3"
+          ],
+          "M": [
+            "M0"
+          ],
+          "T": [
+            "T0"
+          ],
+          "I": [
+            "I0"
+          ],
+          "S": [
+            "S0"
+          ]
+        },
+        "confidence": 0.3,
+        "believes_solved": false,
+        "telemetry": {}
+      },
+      "action": "DOWN",
+      "state_after": {
+        "size": 8,
+        "objects": [
+          {
+            "r": 1,
+            "c": 3,
+            "active": false,
+            "symbol": "R"
+          },
+          {
+            "r": 4,
+            "c": 7,
+            "active": false,
+            "symbol": "V"
+          },
+          {
+            "r": 3,
+            "c": 7,
+            "active": false,
+            "symbol": "K"
+          },
+          {
+            "r": 7,
+            "c": 2,
+            "active": false,
+            "symbol": "K"
+          }
+        ],
+        "barriers": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "available_actions": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ],
+        "step": 12,
+        "solved_env": false,
+        "failed_env": true,
+        "legend": "Symbols are arbitrary visual identities; infer their roles from interaction."
+      },
+      "observation_delta": {
+        "moved": [
+          {
+            "object": "R1",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              1,
+              3
+            ]
+          }
+        ],
+        "changed": [],
+        "removed": [],
+        "added": [],
+        "barriers_removed": [],
+        "barriers_added": [],
+        "solved_changed": false,
+        "failed_changed": true
+      },
+      "reward": 0,
+      "solved_env": false,
+      "failed_env": true,
+      "termination_reason": "action_budget_exhausted"
+    }
+  ],
+  "summary": {
+    "solved": false,
+    "actions": 12,
+    "false_solution_events": 0,
+    "wall_seconds": 56.00439810752869,
+    "termination_reason": "action_budget_exhausted",
+    "llm_calls": 12,
+    "input_tokens": 50131,
+    "output_tokens": 9654,
+    "total_tokens": 59785,
+    "model": "claude-haiku-5-5",
+    "mode": "anthropic",
+    "model_wall_seconds": 55.842501163482666
+  },
+  "change_turn": null,
+  "recovery_latency": null,
+  "agent_summary": {
+    "condition": "llm-only"
+  },
+  "measurements": {
+    "actions": 12,
+    "unique_actions": 4,
+    "action_counts": {
+      "UP": 2,
+      "DOWN": 4,
+      "LEFT": 3,
+      "RIGHT": 3
+    },
+    "action_diversity_fraction": 1.0,
+    "action_entropy_bits": 1.9591479170272448,
+    "normalized_action_entropy": 0.9795739585136224,
+    "redundant_state_action_count": 2,
+    "redundant_action_rate": 0.16666666666666666,
+    "novel_state_action_count": 10,
+    "novel_experiment_rate": 0.8333333333333334,
+    "no_change_action_count": 3,
+    "no_change_action_rate": 0.25,
+    "repeated_same_action_after_no_change": 0,
+    "no_change_action_persistence": 0.0,
+    "mean_confidence": 0.30416666666666664,
+    "mean_confidence_effective_action": 0.31666666666666665,
+    "mean_confidence_no_change_action": 0.26666666666666666,
+    "decision_latency_seconds_per_action": 4.653541763623555,
+    "tokens_per_action": 4982.083333333333,
+    "solved": false,
+    "termination_reason": "action_budget_exhausted"
+  },
+  "autonomy_score": 0.888888888888889
+}
